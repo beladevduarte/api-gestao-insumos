@@ -1,20 +1,22 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Desafio Técnico - ZCK Software
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Olá, Isabela! Bem-vinda ao seu desafio técnico.
+O objetivo deste teste é avaliar sua capacidade de pesquisa, adaptação a novas tecnologias, organização de código e documentação utilizando Git.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Desafio 1: Cadastro de Insumos (Desenvolvimento do Zero)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+No nosso ecossistema, o gerenciamento de matérias-primas é fundamental para a criação das Ordens de Produção. Sua tarefa é criar um CRUD (Create, Read, Update, Delete) simples para um "Cadastro de Insumos".
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+### Requisitos Técnicos
+* **Back-end (.NET 8):** Crie uma API RESTful com endpoints para Criar, Listar e Excluir um insumo. 
+  * *Campos obrigatórios do Insumo:* `Id`, `Nome`, `UnidadeMedida` (ex: Kg, Litro) e `Custo`.
+* **Banco de Dados (SQL Server):** A API deve persistir os dados no SQL Server. Você pode fornecer o script SQL de criação da tabela ou utilizar o Entity Framework Core com Migrations.
+* **Front-end (Angular):** Crie uma interface simples (SPA) com um formulário para cadastrar o insumo e uma tabela/lista para exibir os insumos cadastrados, consumindo a sua API.
+
+### Critérios de Entrega
+1. Faça os commits diretamente neste repositório.
+2. Suas mensagens de commit devem ser claras e descritivas (ex: `feat: adiciona endpoint de criacao de insumos`).
+3. Crie um arquivo com nome `Manual.md`, contendo um passo a passo simples de como rodar a sua aplicação (comandos do Angular, configuração da connection string do banco, etc.).
+
+**Prazo de Entrega:** Até a próxima segunda-feira.
+Bom trabalho!

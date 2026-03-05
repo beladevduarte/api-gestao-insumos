@@ -18,5 +18,5 @@ No nosso ecossistema, o gerenciamento de matérias-primas é fundamental para a 
 2. Suas mensagens de commit devem ser claras e descritivas (ex: `feat: adiciona endpoint de criacao de insumos`).
 3. Crie um arquivo com nome `Manual.md`, contendo um passo a passo simples de como rodar a sua aplicação (comandos do Angular, configuração da connection string do banco, etc.).
 
-**Prazo de Entrega:** Até a próxima segunda-feira.
+**Prazo de Entrega:** Até a próxima quinta-feira **(12/03/2026)**.
 Bom trabalho!

@@ -5,11 +5,26 @@
 namespace ZCK.OrdensProducao.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Insumos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UnidadeMedida = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Custo = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Insumos", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Ordens",
                 columns: table => new
@@ -54,6 +69,9 @@ namespace ZCK.OrdensProducao.Api.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Insumos");
+
             migrationBuilder.DropTable(
                 name: "ItensReceita");
 

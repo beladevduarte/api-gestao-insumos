@@ -35,7 +35,7 @@ export class InsumosComponent implements OnInit {
   carregarInsumos() {
     this.loading = true;
     this.insumoService.getInsumos().subscribe({
-      next: (data) => {
+      next: (data: Insumo[]) => {
         this.insumos = data;
         this.loading = false;
       },
@@ -56,11 +56,19 @@ export class InsumosComponent implements OnInit {
     }
 
     this.loading = true;
+
     this.insumoService.addInsumo(this.novoInsumo).subscribe({
       next: () => {
         this.carregarInsumos();
-        this.novoInsumo = { id: 0, nome: '', unidadeMedida: '', custo: 0 };
-        this.mensagemSucesso = 'Insumo cadastrado com sucesso ✅';
+
+        this.novoInsumo = {
+          id: 0,
+          nome: '',
+          unidadeMedida: '',
+          custo: 0
+        };
+
+        this.mensagemSucesso = 'Insumo cadastrado com sucesso';
         this.loading = false;
       },
       error: () => {
@@ -71,20 +79,20 @@ export class InsumosComponent implements OnInit {
   }
 
   deletar(id: number) {
-  if (!confirm('Tem certeza que deseja excluir?')) return;
+    if (!confirm('Tem certeza que deseja excluir?')) return;
 
-  this.loading = true;
-  this.insumoService.deleteInsumo(id).subscribe({
-    next: () => {
-      this.carregarInsumos();
-      this.mensagemSucesso = 'Insumo excluído com sucesso';
-      this.loading = false;
-    },
-    error: () => {
-      this.loading = false;
-      this.mensagemErro = 'Erro ao excluir insumo';
-    }
-  });
+    this.loading = true;
+
+    this.insumoService.deleteInsumo(id).subscribe({
+      next: () => {
+        this.carregarInsumos();
+        this.mensagemSucesso = 'Insumo excluído com sucesso';
+        this.loading = false;
+      },
+      error: () => {
+        this.mensagemErro = 'Erro ao excluir insumo';
+        this.loading = false;
+      }
+    });
+  }
 }
-
-} 

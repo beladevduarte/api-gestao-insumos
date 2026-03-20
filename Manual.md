@@ -116,3 +116,4 @@ http://localhost:4200
 - Versionamento com Git utilizando commits semânticos  
 - Documentação da API disponível via Swagger  
 
+Projeto finalizado para entrega do desafio técnico.
